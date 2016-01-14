@@ -1,0 +1,6 @@
+framework module SweetSpinners {
+  umbrella header "SweetSpinners-umbrella.h"
+
+  export *
+  module * { export * }
+}

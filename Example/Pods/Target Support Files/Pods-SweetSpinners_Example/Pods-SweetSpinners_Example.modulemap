@@ -1,0 +1,6 @@
+framework module Pods_SweetSpinners_Example {
+  umbrella header "Pods-SweetSpinners_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
