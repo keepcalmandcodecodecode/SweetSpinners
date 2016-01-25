@@ -21,5 +21,13 @@
     "SweetSpinners": [
       "Pod/Assets/*.png"
     ]
+  },
+  "dependencies": {
+    "UIViewSweets": [
+
+    ],
+    "SweetEasing": [
+
+    ]
   }
 }

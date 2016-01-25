@@ -84,14 +84,18 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-SweetSpinners_Tests/SweetEasing.framework"
   install_framework "Pods-SweetSpinners_Tests/SweetSpinners.framework"
+  install_framework "Pods-SweetSpinners_Tests/UIViewSweets.framework"
   install_framework "Pods-SweetSpinners_Tests/FBSnapshotTestCase.framework"
   install_framework "Pods-SweetSpinners_Tests/Nimble.framework"
   install_framework "Pods-SweetSpinners_Tests/Nimble_Snapshots.framework"
   install_framework "Pods-SweetSpinners_Tests/Quick.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-SweetSpinners_Tests/SweetEasing.framework"
   install_framework "Pods-SweetSpinners_Tests/SweetSpinners.framework"
+  install_framework "Pods-SweetSpinners_Tests/UIViewSweets.framework"
   install_framework "Pods-SweetSpinners_Tests/FBSnapshotTestCase.framework"
   install_framework "Pods-SweetSpinners_Tests/Nimble.framework"
   install_framework "Pods-SweetSpinners_Tests/Nimble_Snapshots.framework"
