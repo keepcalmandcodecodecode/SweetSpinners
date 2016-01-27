@@ -79,6 +79,7 @@
 		87E492FA4142C0D43F3978A2BE32EDEE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B5A9B405C3F4B6F9541C7CC9C123F8 /* UIKit.framework */; };
 		8BE8FB06FA38AFCD22F6B63919F6A5D7 /* LinearEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C444CBDC9E5C54F8D476F8BA5EF6E0F6 /* LinearEasing.swift */; };
 		8C96912E1C5665D90051DA95 /* SweetSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96912D1C5665D90051DA95 /* SweetSpinner.swift */; };
+		8C9691301C58E4480051DA95 /* FadingCircleSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96912F1C58E4480051DA95 /* FadingCircleSpinner.swift */; };
 		8D0BF52FF564A170A3D1DE28C27B233E /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F26445FE7CC2D330BCB505A1FC6D1 /* Poll.swift */; };
 		8D549E01DA1D5104335CCEABFF870005 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B593596F91F4F37CDB7771CEA40EAD /* Foundation.framework */; };
 		9187EEC2982DB82AD8D3A7001AA647D6 /* NMBExceptionCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4D98FFEA78999254182BE3F7B51D3C /* NMBExceptionCapture.m */; };
@@ -359,6 +360,7 @@
 		8AEF50C0CFD766DDBB46C367023485F1 /* QuickConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickConfiguration.m; path = Quick/Configuration/QuickConfiguration.m; sourceTree = "<group>"; };
 		8BB89105DC385514857E95D7FCB8A561 /* Quick.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Quick.h; path = Quick/Quick.h; sourceTree = "<group>"; };
 		8C96912D1C5665D90051DA95 /* SweetSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetSpinner.swift; sourceTree = "<group>"; };
+		8C96912F1C58E4480051DA95 /* FadingCircleSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadingCircleSpinner.swift; sourceTree = "<group>"; };
 		8E1B227D9E5EE840E73825E9CA52A96F /* Match.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Match.swift; path = Nimble/Matchers/Match.swift; sourceTree = "<group>"; };
 		8F212BA98571975BC77463536EBE1CB8 /* SweetEasing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SweetEasing.swift; path = Pod/Classes/SweetEasing.swift; sourceTree = "<group>"; };
 		911772A1B48094A7C2EFD13C426FA114 /* UIViewSweets-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewSweets-umbrella.h"; sourceTree = "<group>"; };
@@ -916,6 +918,7 @@
 			isa = PBXGroup;
 			children = (
 				8C96912D1C5665D90051DA95 /* SweetSpinner.swift */,
+				8C96912F1C58E4480051DA95 /* FadingCircleSpinner.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1443,6 +1446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C96912E1C5665D90051DA95 /* SweetSpinner.swift in Sources */,
+				8C9691301C58E4480051DA95 /* FadingCircleSpinner.swift in Sources */,
 				0399DE46CD97921F453ECB8AEE330FED /* SweetSpinners-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

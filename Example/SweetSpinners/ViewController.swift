@@ -28,7 +28,7 @@ class ViewController: UIViewController {
             SweetSpinner.hide(self.view)
             isSpinnerShowing = false
         } else {
-            SweetSpinner.show(self.view)
+            SweetSpinner.show(self.view,withType:.FadingCircle)
             isSpinnerShowing = true
         }
     }

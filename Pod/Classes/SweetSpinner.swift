@@ -10,12 +10,27 @@ import Foundation
 import UIKit
 import UIViewSweets
 
+public protocol Spinner{
+    func animate()
+}
+public enum SpinnerType{
+    case FadingCircle
+}
 public class SweetSpinner:UIView{
-    public class func show(view:UIView)->SweetSpinner{
-        let spinner = SweetSpinner(frame: CGRectMake(0,0,100,100))
-        view.addSubview(spinner)
-        spinner.center = CGPoint(x: view.width/2.0, y: view.height/2.0)
-        return spinner
+    public class func show(view:UIView, withType:SpinnerType)->SweetSpinner{
+        let spinnerView = SweetSpinner(frame: CGRectMake(0,0,100,100))
+        let loaderView = buildLoaderView(withType, frame: spinnerView.bounds)
+        spinnerView.addSubview(loaderView)
+        view.addSubview(spinnerView)
+        spinnerView.center = CGPoint(x: view.width/2.0, y: view.height/2.0)
+        (loaderView as! Spinner).animate()
+        return spinnerView
+    }
+    class func buildLoaderView(type:SpinnerType, frame:CGRect)->UIView{
+        switch type{
+        case .FadingCircle:
+            return FadingCircleSpinner(frame: frame)
+        }
     }
     public class func hide(view:UIView){
         for view in view.subviews{
@@ -26,7 +41,7 @@ public class SweetSpinner:UIView{
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.lightGrayColor()
+        self.backgroundColor = UIColor.clearColor()
     }
     
     required public init?(coder aDecoder: NSCoder) {
