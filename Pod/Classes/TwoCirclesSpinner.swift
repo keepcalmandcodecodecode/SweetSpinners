@@ -10,15 +10,18 @@ import Foundation
 import UIKit
 
 class TwoCirclesSpinner:UIView,Spinner{
+    var smallCircle:CircleView
+    var largeCircle:CircleView
     func upscaleAnimation()->CABasicAnimation{
         let animation = CABasicAnimation()
         animation.keyPath = "transform.scale"
-        animation.fromValue = 0.1
-        animation.toValue = 1.0
-        animation.duration = 1
+        animation.fromValue = 0
+        animation.toValue = 0.35
+        animation.duration = 1.0
         animation.repeatCount = .infinity
         animation.removedOnCompletion = false
         animation.fillMode = kCAFillModeForwards
+        animation.autoreverses = true
         animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionLinear)
         return animation
     }
@@ -26,33 +29,38 @@ class TwoCirclesSpinner:UIView,Spinner{
         let animation = CABasicAnimation()
         animation.keyPath = "transform.scale"
         animation.fromValue = 1.0
-        animation.toValue = 0.1
-        animation.duration = 1
+        animation.toValue = 0.35
+        animation.duration = 1.0
         animation.repeatCount = .infinity
         animation.removedOnCompletion = false
+        animation.autoreverses = true
         animation.fillMode = kCAFillModeForwards
         animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionLinear)
         return animation
     }
     func animate(){
-        let group = CAAnimationGroup()
-        group.animations = [self.downscaleAnimation()]
-        group.duration = 1
-        group.repeatCount = .infinity
-        group.removedOnCompletion = false
-        self.layer.addAnimation(group, forKey: "fade")
+        largeCircle.layer.addAnimation(self.downscaleAnimation(), forKey: "downscaleAnimation")
+        smallCircle.layer.addAnimation(self.upscaleAnimation(), forKey: "upscaleAnimation")
     }
     override init(frame: CGRect) {
+        largeCircle = CircleView().useFillColor(UIColor.grayColor()).useBackgroundColor(UIColor.clearColor())
+        smallCircle = CircleView().useFillColor(UIColor.lightGrayColor()).useBackgroundColor(UIColor.clearColor())
         super.init(frame:frame)
         self.backgroundColor = UIColor.clearColor()
+        self.addSubview(largeCircle)
+        self.addSubview(smallCircle)
     }
     required init?(coder aDecoder: NSCoder) {
+        largeCircle = CircleView()
+        smallCircle = CircleView()
         super.init(coder: aDecoder)
     }
-    override func drawRect(rect: CGRect) {
-        let ovalPath = UIBezierPath(ovalInRect: rect)
-        UIColor.grayColor().setFill()
-        ovalPath.fill()
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        smallCircle.frame = CGRectMake(0, 0, self.width, self.height)
+        smallCircle.center = CGPoint(x:self.width/2.0,y:self.height/2.0)
+        largeCircle.frame = CGRectMake(0, 0, self.width, self.height)
+        largeCircle.center = CGPoint(x:self.width/2.0,y:self.height/2.0)
+        
     }
-
 }
